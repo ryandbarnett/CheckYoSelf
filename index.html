@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles.css">
+    <title>Check Yo'Self</title>
+  </head>
+  <body>
+    <header>
+      <h1 class="title">Check Yo'Self</h1>
+      <form class="search-box" action="index.html" method="post">
+        <button class="search-button" type="button" name="button"></button>
+        <input class="search-input" type="text" name="" value="" placeholder="Search">
+      </form>
+    </header>
+    <main>
+      <form class="user-input-form" action="index.html" method="post">
+        <section class="user-input-section">
+          <label class="task-title-label"for=""></label>
+            <input class="task-title-input" type="text" name="" value="">
+          <label class="task-item-label" for=""></label>
+            <input class="task-item-input" type="text" name="" value="">
+            <button class="make-task-button" type="button" name="button">Make Task List</button>
+          <br>
+          <button class="clear-button" type="button" name="button">Clear All</button>
+        </section>
+        <section class="urgent-filter">
+          <br>
+          <button class="urgency-button" type="button" name="button">Filter by Urgency</button>
+        </section>
+      </form>
+      <section class="task-display">
+        <section class="task-card">
+          <div class="task-title-div">
+            <h3 class="task-title-h3">Task Title</h3>
+          </div>
+          <ul style="list-style-type:none;">
+            <button class="checkbox-button" type="button" name="button"></button>
+            <li>Filler Text</li>
+            <button class="checkbox-button" type="button" name="button"></button>
+            <li>More Filler Text</li>
+          </ul>
+          <div class="">
+            <button class="urgent-button" type="button" name="button"></button>
+            <button class="delete-button" type="button" name="button"></button>
+          </div>
+        </section>
+      </section>
+    </main>
+    <script src="task.js" charset="utf-8"></script>
+    <script src="to-do.js" charset="utf-8"></script>
+    <script src="main.js" charset="utf-8"></script>
+  </body>
+</html>
