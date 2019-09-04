@@ -3,8 +3,8 @@
   margin: 0;
 }
 
-body {
-  width: 100%;
+html {
+  min-height: 100%;
 }
 
 header {
@@ -16,7 +16,7 @@ header {
 
 .title {
   color: #FFFFFF;
-  font-size: 2.3em;
+  font-size: 2.4em;
   font-weight: 800;
   margin-bottom: auto;
   margin-left: 10px;
@@ -52,7 +52,16 @@ header {
   width: 80%;
 }
 
+main {
+  display: flex;
+}
+
 .user-input-form {
-  
+  background-color: #587A8A;
+  height: 100vh;
   width: 33%;
+}
+
+.task-display {
+  width: 66%;
 }
