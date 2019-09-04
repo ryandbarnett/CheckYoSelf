@@ -66,7 +66,7 @@ main {
 
 .user-input-form {
   background-color: #587A8A;
-  border-right: 2px solid #1F1F3D;
+  border-right: 2px solid #41687A;
   height: 100vh;
   width: 33%;
 }
@@ -94,6 +94,27 @@ main {
   width: 90%;
 }
 
+.task-display {
+  width: 66%;
+}
+
+#add-task-button {
+  font-size: 4em !important;
+  font-weight: 100;
+  height: 56px;
+  line-height: 50px;
+  margin-bottom: 50px;
+  margin-right: 4.5% !important;
+  margin-top: -105px !important;
+  text-align: center;
+  vertical-align: middle;
+  width: 56px !important;
+}
+
+/* #add-task-button:focus {
+  outline: none;
+} */
+
 .form-button {
   background-color: #1F1F3D;
   border: none;
@@ -110,7 +131,7 @@ main {
 }
 
 .urgent-filter {
-  border-top: 2px solid #1F1F3D;
+  border-top: 2px solid #41687A;
   margin-top: 40px;
 }
 
