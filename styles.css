@@ -36,15 +36,22 @@ header {
 }
 
 .search-button {
+  background-color: #F3F6F7;
   background-image: url(images/search.svg);
+  background-position: center;
   background-repeat: no-repeat;
+  background-size: 26px;
   border: none;
+  border-radius: 4px 0 0 4px;
+  filter: opacity(.8);
   height: 100%;
   vertical-align: middle;
   width: 56.25px; // if you change height of this or it's parents, update this to match the new height.
 }
 
 .search-input {
+  border: none;
+  border-radius: 0 4px 4px 0;
   box-sizing: border-box;
   font-size: 1.2em;
   height: 100%;
