@@ -17,17 +17,15 @@
     <main>
       <form class="user-input-form" action="index.html" method="post">
         <section class="user-input-section">
-          <label class="task-title-label"for=""></label>
-            <input class="task-title-input" type="text" name="" value="">
-          <label class="task-item-label" for=""></label>
-            <input class="task-item-input" type="text" name="" value="">
-            <button class="make-task-button" type="button" name="button">Make Task List</button>
-          <br>
-          <button class="clear-button" type="button" name="button">Clear All</button>
+          <label class="task-label" for="Task Title">Task Title</label>
+            <input class="task-input" type="text" name="" value="">
+          <label class="task-label" for="Task Item">Task Item</label>
+            <input id="item-input" class="task-input" type="text" name="" value="">
+            <button class="form-button" id="make-task-button" type="button" name="button">Make Task List</button>
+          <button class="form-button" id="clear-button" type="button" name="button">Clear All</button>
         </section>
         <section class="urgent-filter">
-          <br>
-          <button class="urgency-button" type="button" name="button">Filter by Urgency</button>
+          <button class="form-button" id="urgency-button" type="button" name="button">Filter by Urgency</button>
         </section>
       </form>
       <section class="task-display">
