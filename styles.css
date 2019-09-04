@@ -124,25 +124,37 @@ main {
 
 .task-card {
   display: block;
-  width: 15%;
-  border: 2px solid #C7D3D8 ;
-  padding: 60px;
+  width: 37%;
+  border: 2.5px solid #C7D3D8;
   margin: auto;
+}
+
+.task-title-h3 {
+
+}
+
+ul {
+  display: contents;
+}
+
+.task-buttonli-div {
+  margin: 10px 0 10px 20px;
 }
 
 .checkbox-button{
   position: relative;
-  right: 75px;
 }
 
-ul{
+li {
   display: inline;
+  margin: 0 0 0 10px;
 }
 
 hr {
-  width: 210px;
-  position: relative;
-  right: 55px;
+  width: 98%;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1.5px solid #C7D3D8;
 }
 
 .urgent-button{
