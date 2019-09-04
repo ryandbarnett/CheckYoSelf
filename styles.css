@@ -94,10 +94,6 @@ main {
   width: 90%;
 }
 
-.task-display {
-  width: 66%;
-}
-
 .form-button {
   background-color: #1F1F3D;
   border: none;
@@ -129,12 +125,18 @@ main {
   margin: auto;
 }
 
-.task-title-h3 {
+.task-display {
+  width: 66%;
+  background-color: #F3F6F7;
+}
 
+.task-title-h3 {
+  
 }
 
 ul {
   display: contents;
+  list-style-type: none;
 }
 
 .task-buttonli-div {
@@ -142,7 +144,12 @@ ul {
 }
 
 .checkbox-button{
+  background-image: url(images/checkbox.svg);
+  background-repeat: no-repeat;
+  border: none;
   position: relative;
+  height: 14px;
+  border-radius: 50%;
 }
 
 li {
@@ -173,5 +180,6 @@ hr {
   width: 5%;
   height: 16px;
   border-radius: 50%;
-  display: block;
+  border: none;
+  display: inline;
 }
