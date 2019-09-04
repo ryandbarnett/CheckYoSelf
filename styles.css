@@ -113,3 +113,47 @@ main {
 #urgency-button {
   margin-top: 40px;
 }
+.task-card {
+  display: block;
+  width: 15%;
+  border: 2px solid #C7D3D8 ;
+  padding: 60px;
+  margin: auto;
+}
+
+.checkbox-button{
+  position: relative;
+  right: 75px;
+}
+
+ul{
+  display: inline;
+
+}
+
+hr {
+  width: 210px;
+  position: relative;
+  right: 55px;
+
+}
+
+.urgent-button{
+  background-image: url(images/urgent.svg);
+  background-repeat: no-repeat;
+  width: 5%;
+  height: 16px;
+  background-color: white;
+  border: none;
+  display: block;
+
+}
+
+.delete-button{
+  background-image: url(images/delete.svg);
+  background-repeat: no-repeat;
+  width: 5%;
+  height: 16px;
+  border-radius: 50%;
+  display: block;
+}
