@@ -36,7 +36,8 @@ header {
 }
 
 .search-button {
-  background-image: url('/images/search.svg') no-repeat;
+  background-image: url(images/search.svg);
+  background-repeat: no-repeat;
   border: none;
   height: 100%;
   vertical-align: middle;
@@ -113,6 +114,7 @@ main {
 #urgency-button {
   margin-top: 40px;
 }
+
 .task-card {
   display: block;
   width: 15%;
@@ -128,14 +130,12 @@ main {
 
 ul{
   display: inline;
-
 }
 
 hr {
   width: 210px;
   position: relative;
   right: 55px;
-
 }
 
 .urgent-button{
@@ -146,7 +146,6 @@ hr {
   background-color: white;
   border: none;
   display: block;
-
 }
 
 .delete-button{
