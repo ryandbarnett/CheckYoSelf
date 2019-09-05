@@ -32,11 +32,6 @@ function newItem() {
       addTask.disabled = true;
     }}
 
-function newCard() {
-  var makeCard= document.querySelector('#make-task-button');
-
-}
-
 function clearAll() {
   var clearButton = document.getElementById('clear-button');
   var itemTitle = document.querySelector('#task-input');
@@ -58,4 +53,9 @@ function plusEnabled() {
 function clearEnabled() {
   var clearButton = document.getElementById('clear-button');
   clearButton.disabled = false;
+}
+
+function newCard() {
+  var makeCard= document.querySelector('#make-task-button');
+
 }

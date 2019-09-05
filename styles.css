@@ -168,14 +168,18 @@ main {
 .task-card {
   background-color: #FFFFFF;
   border: 2.5px solid #C7D3D8;
-  display: block;
-  margin: auto;
-  width: 37%;
+  box-sizing: border-box;
+  display: inline-block;
+  margin-top: 32px;
+  width: 100%;
 }
 
 .task-display {
-  width: 66%;
   background-color: #F3F6F7;
+  column-count: 2;
+  column-gap: 32px;
+  padding: 0px 30px 30px 30px;
+  width: 66%;
 }
 
 .task-title-h3 {
