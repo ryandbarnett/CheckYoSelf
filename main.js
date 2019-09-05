@@ -40,17 +40,3 @@ inputForm.addEventListener('click', function(event) {
       clearButton.disabled = true;
     }
   }
-
-  // function dontAdd() {
-  //   var makeTaskButton = document.getElementById('make-task-button');
-  //   var itemInput = document.getElementById('item-input');
-  //   if (itemInput.value !== '') {
-  //     makeTaskButton.disabled = false;
-  //   } if (itemInput.value === '') {
-  //     makeTaskButton.disabled = true;
-  //   }
-  // }
-
-  // function deleteTask() {
-  //   var deleteButton = document.getElementById('delete-button');
-  //   var tempItems = document.querySelector('temp-items');
