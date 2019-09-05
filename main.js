@@ -17,7 +17,7 @@ inputForm.addEventListener('click', function(event) {
     var tempItems = document.querySelector('.temp-items');
     var addTask = document.querySelector('#add-task-button')
     if (itemText.value !== '') {
-        tempItems.insertAdjacentHTML('beforeend', "<li>" + itemText.value + "</li>");
+        tempItems.insertAdjacentHTML('beforeend', "<li class= temp-task>" + '<button class="delete" id="delete-button" type="button" name="button"></button>' + itemText.value + "</li>");
         addTask.style.outlineWidth = '4px';
   } else {
         addTask.style.outlineWidth = '0px';
