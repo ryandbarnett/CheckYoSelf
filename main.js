@@ -22,6 +22,14 @@ inputForm.addEventListener('click', function(event) {
   }
 
   function clearAll() {
-    var makeCard= document.querySelector('#clear-button');
-
+    var clearButton = document.getElementById('clear-button');
+    var itemTitle = document.querySelector('#task-input');
+    var itemList = document.querySelector('.temp-items');
+    if (itemTitle.value !== '') {
+      clearButton.disabled = false;
+      itemTitle.value = '';
+      itemList.innerHTML = '';
+    } if (itemTitle.value !== '') {
+      clearButton.disabled = true;
+    }
   }
