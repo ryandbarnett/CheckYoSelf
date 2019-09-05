@@ -1,26 +1,34 @@
 var inputForm = document.querySelector('.user-input-form');
 
 inputForm.addEventListener('click', function(event) {
-  if (event.target.id ==='add-task-button') {
+    if (event.target.id === 'add-task-button') {
       newItem();
-  } if (event.target.id ==='make-task-button') {
+  } if (event.target.id === 'make-task-button') {
       newCard();
-  } if (event.target.id ==='clear-button') {
+  } if (event.target.id === 'clear-button') {
       clearAll();
-  } if (event.target.id ==='delete-button') {
+  } if (event.target.id === 'delete-button') {
       deleteTask();
+  }
+})
+
+inputForm.addEventListener('keyup', function(event) {
+  if (event.target.id === 'task-input') {
+    clearEnabled();
+  }
+  if (event.target.id === 'add-task-button') {
+    plusEnabled();
   }
 })
 
 function newItem() {
   var itemText = document.getElementById('item-input');
   var tempItems = document.querySelector('.temp-items');
-  var addTask = document.querySelector('#add-task-button')
+  var addTask = document.querySelector('#add-task-button');
   if (itemText.value !== '') {
       tempItems.insertAdjacentHTML('beforeend', "<li class= temp-task>" + '<button class="delete" id="delete-button" type="button" name="button"></button>' + itemText.value + "</li>");
-      addTask.style.outlineWidth = '4px';
-} else {
-      addTask.style.outlineWidth = '0px';
+} if (itemText.value !== '') {
+      addTask.disabled = true;
     }}
 
 function newCard() {
@@ -33,7 +41,6 @@ function clearAll() {
   var itemTitle = document.querySelector('#task-input');
   var itemList = document.querySelector('.temp-items');
   if (itemTitle.value !== '') {
-    clearButton.disabled = false;
     itemTitle.value = '';
     itemList.innerHTML = '';
   } if (itemTitle.value !== '') {
@@ -41,6 +48,12 @@ function clearAll() {
   }
 }
 
-function deleteTask() {
-  this.parentNode.innerText = '';
+function plusEnabled() {
+  var addTask = document.querySelector('#add-task-button');
+  addTask.disabled = false;
+}
+
+function clearEnabled() {
+  var clearButton = document.getElementById('clear-button');
+  clearButton.disabled = false;
 }
