@@ -12,31 +12,35 @@ inputForm.addEventListener('click', function(event) {
   }
 })
 
-  function newItem() {
-    var itemText = document.getElementById('item-input');
-    var tempItems = document.querySelector('.temp-items');
-    var addTask = document.querySelector('#add-task-button')
-    if (itemText.value !== '') {
-        tempItems.insertAdjacentHTML('beforeend', "<li class= temp-task>" + '<button class="delete" id="delete-button" type="button" name="button"></button>' + itemText.value + "</li>");
-        addTask.style.outlineWidth = '4px';
-  } else {
-        addTask.style.outlineWidth = '0px';
-      }}
+function newItem() {
+  var itemText = document.getElementById('item-input');
+  var tempItems = document.querySelector('.temp-items');
+  var addTask = document.querySelector('#add-task-button')
+  if (itemText.value !== '') {
+      tempItems.insertAdjacentHTML('beforeend', "<li class= temp-task>" + '<button class="delete" id="delete-button" type="button" name="button"></button>' + itemText.value + "</li>");
+      addTask.style.outlineWidth = '4px';
+} else {
+      addTask.style.outlineWidth = '0px';
+    }}
 
-  function newCard() {
-    var makeCard= document.querySelector('#make-task-button');
+function newCard() {
+  var makeCard= document.querySelector('#make-task-button');
 
+}
+
+function clearAll() {
+  var clearButton = document.getElementById('clear-button');
+  var itemTitle = document.querySelector('#task-input');
+  var itemList = document.querySelector('.temp-items');
+  if (itemTitle.value !== '') {
+    clearButton.disabled = false;
+    itemTitle.value = '';
+    itemList.innerHTML = '';
+  } if (itemTitle.value !== '') {
+    clearButton.disabled = true;
   }
+}
 
-  function clearAll() {
-    var clearButton = document.getElementById('clear-button');
-    var itemTitle = document.querySelector('#task-input');
-    var itemList = document.querySelector('.temp-items');
-    if (itemTitle.value !== '') {
-      clearButton.disabled = false;
-      itemTitle.value = '';
-      itemList.innerHTML = '';
-    } if (itemTitle.value !== '') {
-      clearButton.disabled = true;
-    }
-  }
+function deleteTask() {
+  this.parentNode.innerText = '';
+}
