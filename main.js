@@ -16,7 +16,7 @@ inputForm.addEventListener('keyup', function(event) {
   if (event.target.id === 'task-input') {
     clearEnabled();
   }
-  if (event.target.id === 'add-task-button') {
+  if (event.target.id === 'item-input') {
     plusEnabled();
   }
 })
@@ -27,7 +27,8 @@ function newItem() {
   var addTask = document.querySelector('#add-task-button');
   if (itemText.value !== '') {
       tempItems.insertAdjacentHTML('beforeend', "<li class= temp-task>" + '<button class="delete" id="delete-button" type="button" name="button"></button>' + itemText.value + "</li>");
-} if (itemText.value !== '') {
+} if (itemText.value === '') {
+      console.log('plusDisable');
       addTask.disabled = true;
     }}
 
@@ -43,13 +44,14 @@ function clearAll() {
   if (itemTitle.value !== '') {
     itemTitle.value = '';
     itemList.innerHTML = '';
-  } if (itemTitle.value !== '') {
+  } if (itemTitle.value === '') {
     clearButton.disabled = true;
   }
 }
 
 function plusEnabled() {
-  var addTask = document.querySelector('#add-task-button');
+  var addTask = document.getElementById('add-task-button');
+  console.log('plusEnable');
   addTask.disabled = false;
 }
 
