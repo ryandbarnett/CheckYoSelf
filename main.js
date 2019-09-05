@@ -59,3 +59,20 @@ function newCard() {
   var makeCard= document.querySelector('#make-task-button');
 
 }
+
+function clearAll() {
+   var clearButton = document.getElementById('clear-button');
+   var itemTitle = document.querySelector('#task-input');
+   var itemList = document.querySelector('.temp-items');
+   if (itemTitle.value.length === 0) {
+     console.log('disabled');
+     clearButton.style.outlineWidth = '0px';
+   } else {
+     console.log('enabled');
+     clearButton.removeAttribute('disabled');
+     itemTitle.value = '';
+     itemList.innerHTML = '';
+     clearButton.style.outlineWidth = '4px';
+   }
+}
+
