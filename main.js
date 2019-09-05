@@ -32,11 +32,14 @@ inputForm.addEventListener('click', function(event) {
     var clearButton = document.getElementById('clear-button');
     var itemTitle = document.querySelector('#task-input');
     var itemList = document.querySelector('.temp-items');
-    if (itemTitle.value !== '') {
-      clearButton.disabled = false;
+    if (itemTitle.value.length === 0) {
+      console.log('disabled');
+      clearButton.style.outlineWidth = '0px';
+    } else {
+      console.log('enabled');
+      clearButton.removeAttribute('disabled');
       itemTitle.value = '';
       itemList.innerHTML = '';
-    } if (itemTitle.value !== '') {
-      clearButton.disabled = true;
+      clearButton.style.outlineWidth = '4px';
     }
   }
