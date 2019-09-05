@@ -7,14 +7,21 @@ inputForm.addEventListener('click', function(event) {
       newCard();
   } if (event.target.id ==='clear-button') {
       clearAll();
+  } if (event.target.id ==='delete-button') {
+      deleteTask();
   }
 })
 
   function newItem() {
-    var itemText= document.querySelector('#item-input');
-    var tempItems= document.querySelector('.temp-items');
-    tempItems.insertAdjacentHTML('beforeend', "<li>" + itemText.value + "</li>");
-  }
+    var itemText = document.getElementById('item-input');
+    var tempItems = document.querySelector('.temp-items');
+    var addTask = document.querySelector('#add-task-button')
+    if (itemText.value !== '') {
+        tempItems.insertAdjacentHTML('beforeend', "<li>" + itemText.value + "</li>");
+        addTask.style.outlineWidth = '4px';
+  } else {
+        addTask.style.outlineWidth = '0px';
+      }}
 
   function newCard() {
     var makeCard= document.querySelector('#make-task-button');
@@ -33,3 +40,17 @@ inputForm.addEventListener('click', function(event) {
       clearButton.disabled = true;
     }
   }
+
+  // function dontAdd() {
+  //   var makeTaskButton = document.getElementById('make-task-button');
+  //   var itemInput = document.getElementById('item-input');
+  //   if (itemInput.value !== '') {
+  //     makeTaskButton.disabled = false;
+  //   } if (itemInput.value === '') {
+  //     makeTaskButton.disabled = true;
+  //   }
+  // }
+
+  // function deleteTask() {
+  //   var deleteButton = document.getElementById('delete-button');
+  //   var tempItems = document.querySelector('temp-items');
