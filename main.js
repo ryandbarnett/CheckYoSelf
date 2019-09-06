@@ -57,6 +57,20 @@ function clearEnabled() {
   clearButton.disabled = false;
 }
 
+// WIP >>>>>>>>>>>>>>>>>>>>
+
+// var toDoTaskArr = [];
+//
+// function toDoTaskObj() {
+//   var itemList = document.querySelector('.temp-items');
+//   for (var i = 0; i <= toDoTaskArr.length; i++) {
+//     var toDoTaskArr[i] = new taskItem(itemList.innerHTML);
+//   }
+//   toDoTaskArr.push(toDoTaskArr[i]);
+// }
+
+// =====================
+
 // function newCard() {
 //   var makeCard= document.querySelector('#make-task-button');
 //   createToDoObject();
@@ -72,3 +86,4 @@ function clearEnabled() {
 //   }
 //   toDoObject.push(toDoObject[i]);
 // }
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<
