@@ -1,7 +1,7 @@
-class ToDoItem {
+class toDoItem {
   constructor(title) {
     this.title = title;
-    this.id = this.title; // time/date from browser?
+    this.id = Date.now();
     this.urgent = false;
     this.tasks = [];
   }

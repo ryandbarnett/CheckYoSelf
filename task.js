@@ -1,6 +1,6 @@
 class taskItem {
-  constructor() {
-    this.item = '';
+  constructor(task) {
+    this.item = task;
     this.complete = false;
   }
 }
