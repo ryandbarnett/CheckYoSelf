@@ -28,7 +28,6 @@ function newItem() {
   if (itemText.value !== '') {
       tempItems.insertAdjacentHTML('beforeend', "<li class= temp-task>" + '<button class="delete" id="delete-button" type="button" name="button"></button>' + itemText.value + "</li>");
 } if (itemText.value === '') {
-      console.log('plusDisable');
       addTask.disabled = true;
     }}
 
@@ -46,7 +45,6 @@ function clearAll() {
 
 function plusEnabled() {
   var addTask = document.getElementById('add-task-button');
-  console.log('plusEnable');
   addTask.disabled = false;
 }
 
@@ -55,24 +53,18 @@ function clearEnabled() {
   clearButton.disabled = false;
 }
 
-function newCard() {
-  var makeCard= document.querySelector('#make-task-button');
+// function newCard() {
+//   var makeCard= document.querySelector('#make-task-button');
+//   createToDoObject();
+//   console.log(toDoObject);
+// }
 
-}
-
-function clearAll() {
-   var clearButton = document.getElementById('clear-button');
-   var itemTitle = document.querySelector('#task-input');
-   var itemList = document.querySelector('.temp-items');
-   if (itemTitle.value.length === 0) {
-     console.log('disabled');
-     clearButton.style.outlineWidth = '0px';
-   } else {
-     console.log('enabled');
-     clearButton.removeAttribute('disabled');
-     itemTitle.value = '';
-     itemList.innerHTML = '';
-     clearButton.style.outlineWidth = '4px';
-   }
-}
-
+// var toDoObject = [];
+//
+// function createToDoObject() {
+//   var itemTitle = document.querySelector('#task-input');
+//   for (var i = 0; i <= toDoObject.length; i++) {
+//     var toDoObject[i] = new toDoItem(itemTitle.value)
+//   }
+//   toDoObject.push(toDoObject[i]);
+// }
