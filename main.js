@@ -60,7 +60,8 @@ function clearEnabled() {
 // WIP >>>>>>>>>>>>>>>>>>>>
 
 // var toDoTaskArr = [];
-//
+// var counter = 0;
+
 // function toDoTaskObj() {
 //   var itemList = document.querySelector('.temp-items');
 //   for (var i = 0; i <= toDoTaskArr.length; i++) {
