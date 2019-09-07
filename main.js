@@ -25,6 +25,7 @@ function newItem() {
   var itemText = document.getElementById('item-input');
   var tempItems = document.querySelector('.temp-items');
   var addTask = document.querySelector('#add-task-button');
+  newTask();
   if (itemText.value !== '') {
       tempItems.insertAdjacentHTML('beforeend',
       '<li class= temp-task>' +
@@ -57,11 +58,13 @@ function clearEnabled() {
   clearButton.disabled = false;
 }
 
-// WIP >>>>>>>>>>>>>>>>>>>>
+var toDoTaskArr = [];
 
-// var toDoTaskArr = [];
-// var counter = 0;
-
+function newTask() {
+  var itemText = document.getElementById('item-input');
+  var newTaskItem = new taskItem(itemText.value);
+  toDoTaskArr.push(newTaskItem);
+}
 // function toDoTaskObj() {
 //   var itemList = document.querySelector('.temp-items');
 //   for (var i = 0; i <= toDoTaskArr.length; i++) {
