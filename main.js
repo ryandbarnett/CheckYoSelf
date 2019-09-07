@@ -51,6 +51,13 @@ function clearAll() {
   }
 }
 
+function deleteTask() {
+  if (event.target.className === 'delete') {
+    console.log(event.target.parentNode);
+    event.target.parentNode.remove();
+  }
+}
+
 function plusEnabled() {
   var addTask = document.getElementById('add-task-button');
   addTask.disabled = false;
