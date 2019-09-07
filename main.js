@@ -1,10 +1,13 @@
 var inputForm = document.querySelector('.user-input-form');
+var toDoTaskArr = [];
+var toDoCardArr = [];
 
 inputForm.addEventListener('click', function(event) {
     if (event.target.id === 'add-task-button') {
       newItem();
   } if (event.target.id === 'make-task-button') {
-      newCard();
+      newCardObj();
+      console.log(toDoCardArr[0]);
   } if (event.target.id === 'clear-button') {
       clearAll();
   } if (event.target.id === 'delete-button') {
@@ -58,36 +61,14 @@ function clearEnabled() {
   clearButton.disabled = false;
 }
 
-var toDoTaskArr = [];
-
 function newTask() {
   var itemText = document.getElementById('item-input');
   var newTaskItem = new taskItem(itemText.value);
   toDoTaskArr.push(newTaskItem);
 }
-// function toDoTaskObj() {
-//   var itemList = document.querySelector('.temp-items');
-//   for (var i = 0; i <= toDoTaskArr.length; i++) {
-//     var toDoTaskArr[i] = new taskItem(itemList.innerHTML);
-//   }
-//   toDoTaskArr.push(toDoTaskArr[i]);
-// }
 
-// =====================
-
-// function newCard() {
-//   var makeCard= document.querySelector('#make-task-button');
-//   createToDoObject();
-//   console.log(toDoObject);
-// }
-
-// var toDoObject = [];
-//
-// function createToDoObject() {
-//   var itemTitle = document.querySelector('#task-input');
-//   for (var i = 0; i <= toDoObject.length; i++) {
-//     var toDoObject[i] = new toDoItem(itemTitle.value)
-//   }
-//   toDoObject.push(toDoObject[i]);
-// }
-// <<<<<<<<<<<<<<<<<<<<<<<<<<<
+function newCardObj() {
+  var title = document.getElementById('task-input');
+  var cardObject = new toDoCard(title.value, toDoTaskArr);
+  toDoCardArr.push(cardObject);
+}
