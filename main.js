@@ -20,6 +20,7 @@ inputForm.addEventListener('keyup', function(event) {
   }
   if (event.target.id === 'item-input') {
     plusEnabled();
+    removeTaskError();
   }
 })
 
@@ -29,6 +30,7 @@ function newItem() {
   var addTask = document.querySelector('#add-task-button');
   if (itemText.value === '') {
       addTask.disabled = true;
+      noTaskError();
   } else {
       newTask();
       tempItems.insertAdjacentHTML('beforeend',
@@ -78,4 +80,25 @@ function newCardObj() {
   var title = document.getElementById('task-input');
   var cardObject = new toDoCard(title.value, toDoTaskArr);
   toDoCardArr.push(cardObject);
+}
+
+function noTitleError() {
+  var itemTitle = document.querySelector('#task-input');
+  var titleError = document.getElementById('title-error');
+  itemTitle.style.borderColor = '#740000';
+  titleError.style.display = 'block';
+}
+
+function noTaskError() {
+  var itemText = document.getElementById('item-input');
+  var taskError = document.getElementById('item-error');
+  itemText.style.borderColor = '#740000';
+  taskError.style.display = 'inline';
+}
+
+function removeTaskError() {
+  var itemText = document.getElementById('item-input');
+  var taskError = document.getElementById('item-error');
+  itemText.style.borderColor = '#1F1F3D';
+  taskError.style.display = 'none';
 }
