@@ -51,6 +51,7 @@ header {
 
 input {
   font-size: 1.2em;
+  padding-left: 10px;
 }
 
 .search-input {
@@ -127,18 +128,21 @@ main {
   height: 55px;
   line-height: 50px;
   margin-bottom: 50px;
-  margin-right: 4.5%;
+  margin-right: 3.6%;
   margin-top: -55px;
   text-align: center;
   vertical-align: middle;
   width: 56px;
 }
 
-/* might add this back later to remove the weird outline on click */
-/* #add-task-button:focus {
-  background-color: black;
+button:active {
+  background-color: #8C8C8C;
+  border: 2px solid #FFC30C;
+}
+
+button:focus {
   outline: none;
-} */
+}
 
 .form-button {
   background-color: #1F1F3D;
