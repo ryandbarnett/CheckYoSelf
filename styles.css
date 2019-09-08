@@ -49,6 +49,10 @@ header {
   width: 56.25px; // if you change height of this or it's parents, update this to match the new height.
 }
 
+button {
+  cursor: pointer;
+}
+
 input {
   font-size: 1.2em;
   padding-left: 10px;
@@ -78,6 +82,21 @@ main {
 .user-input-section {
   margin-top: 60px;
   width: 100%;
+}
+
+#title-error {
+  display: none;
+  margin-left: 4%;
+}
+
+.error-message {
+  color: #740000;
+  font-size: 1em;
+}
+
+#item-error {
+  display: none;
+  margin-left: 25%;
 }
 
 .temp-items {
@@ -125,11 +144,11 @@ main {
 #add-task-button {
   font-size: 4em;
   font-weight: 100;
-  height: 55px;
+  height: 56px;
   line-height: 50px;
   margin-bottom: 50px;
-  margin-right: 3.6%;
-  margin-top: -55px;
+  margin-right: 3.4%;
+  margin-top: -56px;
   text-align: center;
   vertical-align: middle;
   width: 56px;
@@ -264,7 +283,7 @@ hr {
     flex-direction: column;
     width: 100vw;
   }
-  
+
   .task-display{
     width:100%;
   }
