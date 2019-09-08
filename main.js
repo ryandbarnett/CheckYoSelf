@@ -27,16 +27,15 @@ function newItem() {
   var itemText = document.getElementById('item-input');
   var tempItems = document.querySelector('.temp-items');
   var addTask = document.querySelector('#add-task-button');
-  newTask();
-  if (itemText.value !== '') {
-      tempItems.insertAdjacentHTML('beforeend',
-      '<li class= temp-task>' +
-        '<button class="delete" id="delete-button" type="button" name="button"></button>' +
-        itemText.value +
-      '</li>');
-  } if (itemText.value === '') {
+  if (itemText.value === '') {
       addTask.disabled = true;
-    } else {
+  } else {
+      newTask();
+      tempItems.insertAdjacentHTML('beforeend',
+        '<li class= temp-task>' +
+          '<button class="delete" id="delete-button" type="button" name="button"></button>' +
+          itemText.value +
+        '</li>');
       return itemText.value = '';
     }
 }

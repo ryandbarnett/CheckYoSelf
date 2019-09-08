@@ -264,9 +264,11 @@ hr {
     flex-direction: column;
     width: 100vw;
   }
+  
   .task-display{
     width:100%;
   }
+
   .user-input-section {
     /* margin-top: 60px; */
     width: 100vw;
