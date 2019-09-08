@@ -18,11 +18,13 @@
       <form class="user-input-form" action="index.html" method="post">
         <section class="user-input-section">
           <label class="task-label" for="Task Title">Task Title</label>
-            <input class="task-input" id="task-input" type="text" name="" value="">
-            <ul class ="temp-items">
-            </ul>
+          <input class="task-input" id="task-input" type="text" name="" value="">
+          <span class="error-message" id="title-error">Please enter a title</span>
+          <ul class ="temp-items">
+          </ul>
           <label class="task-label" for="Task Item">Task Item</label>
-            <input class="task-input" id="item-input" type="text" name="" value="">
+          <span class="error-message" id="item-error">Please enter a task</span>
+          <input class="task-input" id="item-input" type="text" name="" value="">
           <button class="form-button" id="add-task-button" type="button" name="button">+</button>
           <button class="form-button" id="make-task-button" type="button" name="button">Make Task List</button>
           <button class="form-button" id="clear-button" type="button" name="button">Clear All</button>

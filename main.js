@@ -7,7 +7,6 @@ inputForm.addEventListener('click', function(event) {
       newItem();
   } if (event.target.id === 'make-task-button') {
       newCardObj();
-      console.log(toDoCardArr[0]);
   } if (event.target.id === 'clear-button') {
       clearAll();
   } if (event.target.id === 'delete-button') {
@@ -28,16 +27,18 @@ function newItem() {
   var itemText = document.getElementById('item-input');
   var tempItems = document.querySelector('.temp-items');
   var addTask = document.querySelector('#add-task-button');
-  newTask();
-  if (itemText.value !== '') {
-      tempItems.insertAdjacentHTML('beforeend',
-      '<li class= temp-task>' +
-        '<button class="delete" id="delete-button" type="button" name="button"></button>' +
-        itemText.value +
-      '</li>');
-} if (itemText.value === '') {
+  if (itemText.value === '') {
       addTask.disabled = true;
-    }}
+  } else {
+      newTask();
+      tempItems.insertAdjacentHTML('beforeend',
+        '<li class= temp-task>' +
+          '<button class="delete" id="delete-button" type="button" name="button"></button>' +
+          itemText.value +
+        '</li>');
+      return itemText.value = '';
+    }
+}
 
 function clearAll() {
   var clearButton = document.getElementById('clear-button');
@@ -53,7 +54,6 @@ function clearAll() {
 
 function deleteTask() {
   if (event.target.className === 'delete') {
-    console.log(event.target.parentNode);
     event.target.parentNode.remove();
   }
 }
