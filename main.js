@@ -7,7 +7,6 @@ inputForm.addEventListener('click', function(event) {
       newItem();
   } if (event.target.id === 'make-task-button') {
       newCardObj();
-      console.log(toDoCardArr[0]);
   } if (event.target.id === 'clear-button') {
       clearAll();
   } if (event.target.id === 'delete-button') {
@@ -56,7 +55,6 @@ function clearAll() {
 
 function deleteTask() {
   if (event.target.className === 'delete') {
-    console.log(event.target.parentNode);
     event.target.parentNode.remove();
   }
 }
