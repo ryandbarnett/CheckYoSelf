@@ -5,6 +5,7 @@ var toDoCardArr = [];
 inputForm.addEventListener('click', function(event) {
     if (event.target.id === 'add-task-button') {
       newItem();
+      clearEnabled();
   } if (event.target.id === 'make-task-button') {
       newCardObj();
   } if (event.target.id === 'clear-button') {
@@ -20,6 +21,7 @@ inputForm.addEventListener('keyup', function(event) {
   }
   if (event.target.id === 'item-input') {
     plusEnabled();
+    clearEnabled();
   }
 })
 
@@ -44,10 +46,16 @@ function clearAll() {
   var clearButton = document.getElementById('clear-button');
   var itemTitle = document.querySelector('#task-input');
   var itemList = document.querySelector('.temp-items');
-  if (itemTitle.value !== '') {
+  var itemInput = document.querySelector('#item-input');
+  if (itemTitle.value !== '' ||
+      itemList.innerHTML !== '' ||
+      itemInput.value !== '') {
     itemTitle.value = '';
     itemList.innerHTML = '';
-  } if (itemTitle.value === '') {
+    itemInput.value = '';
+  } if (itemTitle.value === '' ||
+        itemList.innerHTML === '' ||
+        itemInput.value === '') {
     clearButton.disabled = true;
   }
 }
@@ -68,6 +76,7 @@ function clearEnabled() {
   clearButton.disabled = false;
 }
 
+// change function name to newTask to newTaskObj to better reflect what is happening?
 function newTask() {
   var itemText = document.getElementById('item-input');
   var newTaskItem = new taskItem(itemText.value);
