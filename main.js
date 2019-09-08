@@ -35,9 +35,12 @@ function newItem() {
         '<button class="delete" id="delete-button" type="button" name="button"></button>' +
         itemText.value +
       '</li>');
-} if (itemText.value === '') {
+  } if (itemText.value === '') {
       addTask.disabled = true;
-    }}
+    } else {
+      return itemText.value = '';
+    }
+}
 
 function clearAll() {
   var clearButton = document.getElementById('clear-button');
