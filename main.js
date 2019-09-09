@@ -13,7 +13,7 @@ inputForm.addEventListener('click', function(event) {
   } if (event.target.id === 'delete-button') {
       deleteTask();
   }
-})
+});
 
 inputForm.addEventListener('keyup', function(event) {
   if (event.target.id === 'task-input') {
@@ -23,7 +23,7 @@ inputForm.addEventListener('keyup', function(event) {
     plusEnabled();
     clearEnabled();
   }
-})
+});
 
 function newItem() {
   var itemText = document.getElementById('item-input');
@@ -39,8 +39,37 @@ function newItem() {
           itemText.value +
         '</li>');
       return itemText.value = '';
-    }
-}
+  }
+};
+
+function addNewCard(cardObject) {
+  var taskDisplay = document.querySelector('.task-display')
+  taskDisplay.insertAdjacentHTML('afterbegin',
+    `<section class="task-card">
+      <div class="task-title-div">
+        <h3 class="task-title-h3">${cardObject.title}</h3>
+      </div>
+      <hr>
+      <ul class="card-item-list">
+      <hr>
+      </ul>
+      <div class="card-controls">
+        <button class="urgent-button" type="button" name="button">URGENT</button>
+        <button class="delete-button" type="button" name="button">DELETE</button>
+      </div>
+    </section>`);
+};
+
+function addTaskToCard(tasks) {
+  tasks.forEach(function(task) {
+    var ul = document.querySelector('.card-item-list')
+    ul.insertAdjacentHTML('afterbegin',
+    `<div class="task-buttonli-div">
+      <button class="checkbox-button" type="button" name="button"></button>
+      <li>${task.item}</li>
+    </div>`)
+  })
+};
 
 function clearAll() {
   var clearButton = document.getElementById('clear-button');
@@ -71,6 +100,11 @@ function plusEnabled() {
   addTask.disabled = false;
 }
 
+function makeListEnabled() {
+  var makeListButton = document.querySelector('.make-task-button');
+  makeListButton.disabled = false;
+}
+
 function clearEnabled() {
   var clearButton = document.getElementById('clear-button');
   clearButton.disabled = false;
@@ -79,12 +113,17 @@ function clearEnabled() {
 // change function name to newTask to newTaskObj to better reflect what is happening?
 function newTask() {
   var itemText = document.getElementById('item-input');
-  var newTaskItem = new taskItem(itemText.value);
-  toDoTaskArr.push(newTaskItem);
+  var taskObj = new taskItem(itemText.value);
+  toDoTaskArr.push(taskObj);
 }
 
 function newCardObj() {
   var title = document.getElementById('task-input');
   var cardObject = new toDoCard(title.value, toDoTaskArr);
   toDoCardArr.push(cardObject);
+  console.log(cardObject);
+  addNewCard(cardObject);
+  addTaskToCard(cardObject.tasks);
+  clearAll();
+  toDoTaskArr = [];
 }
