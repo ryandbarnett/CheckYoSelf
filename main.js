@@ -67,6 +67,7 @@ function addNewCard(cardObject) {
         <button class="delete-button" type="button" name="button">DELETE</button>
       </div>
     </section>`);
+    removeTempCard();
 }}
 
 function addTaskToCard(tasks) {
@@ -168,4 +169,9 @@ function removeTaskError() {
   itemText.style.borderWidth = '2px'
   addButton.style.height = '56px'
   taskError.style.display = 'none';
+}
+
+function removeTempCard() {
+  var tempTaskCard = document.querySelector('#temp-task-card');
+  tempTaskCard.style.display = 'none';
 }
