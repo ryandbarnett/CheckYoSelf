@@ -94,21 +94,22 @@ function newCardObj() {
 function noTitleError() {
   var itemTitle = document.querySelector('#task-input');
   var titleError = document.getElementById('title-error');
-  itemTitle.style.borderColor = '#1F1F3D';
+  itemTitle.style.borderColor = '#FFC30C';
   titleError.style.display = 'block';
 }
 
 function removeTitleError() {
   var itemTitle = document.querySelector('#task-input');
   var titleError = document.getElementById('title-error');
-  itemTitle.style.borderColor = '#740000';
+  itemTitle.style.borderColor = '#1F1F3D';
   titleError.style.display = 'none';
 }
 
 function noTaskError() {
   var itemText = document.getElementById('item-input');
   var taskError = document.getElementById('item-error');
-  itemText.style.borderColor = '#740000';
+  itemText.style.borderColor = '#FFC30C';
+  itemText.style.borderWidth = '4px';
   taskError.style.display = 'inline';
 }
 
