@@ -18,11 +18,12 @@ inputForm.addEventListener('click', function(event) {
 inputForm.addEventListener('keyup', function(event) {
   if (event.target.id === 'task-input') {
     clearEnabled();
-  }
-  if (event.target.id === 'item-input') {
-    plusEnabled();
-    clearEnabled();
-    removeTaskError();
+    makeListEnabled();
+    removeTitleError();
+  } if (event.target.id === 'item-input') {
+      plusEnabled();
+      clearEnabled();
+      removeTaskError();
   }
 });
 
@@ -45,8 +46,14 @@ function newItem() {
 };
 
 function addNewCard(cardObject) {
-  var taskDisplay = document.querySelector('.task-display')
-  taskDisplay.insertAdjacentHTML('afterbegin',
+  var taskDisplay = document.querySelector('.task-display');
+  var itemTitle = document.querySelector('#task-input');
+  var newTaskButton = document.getElementById('make-task-button');
+  if (itemTitle.value === '') {
+    newTaskButton.disabled = true;
+    noTitleError();
+  } else {
+    taskDisplay.insertAdjacentHTML('afterbegin',
     `<section class="task-card">
       <div class="task-title-div">
         <h3 class="task-title-h3">${cardObject.title}</h3>
@@ -60,7 +67,7 @@ function addNewCard(cardObject) {
         <button class="delete-button" type="button" name="button">DELETE</button>
       </div>
     </section>`);
-};
+}}
 
 function addTaskToCard(tasks) {
   tasks.forEach(function(task) {
@@ -71,7 +78,7 @@ function addTaskToCard(tasks) {
       <li>${task.item}</li>
     </div>`)
   })
-};
+}
 
 function clearAll() {
   var clearButton = document.getElementById('clear-button');
@@ -103,7 +110,7 @@ function plusEnabled() {
 }
 
 function makeListEnabled() {
-  var makeListButton = document.querySelector('.make-task-button');
+  var makeListButton = document.getElementById('make-task-button');
   makeListButton.disabled = false;
 }
 
@@ -146,14 +153,19 @@ function removeTitleError() {
 function noTaskError() {
   var itemText = document.getElementById('item-input');
   var taskError = document.getElementById('item-error');
+  var addButton = document.getElementById('add-task-button');
   itemText.style.borderColor = '#FFC30C';
-  itemText.style.borderWidth = '4px';
+  itemText.style.borderWidth = '4px 0px 4px 4px';
+  addButton.style.height = '60px'
   taskError.style.display = 'inline';
 }
 
 function removeTaskError() {
   var itemText = document.getElementById('item-input');
   var taskError = document.getElementById('item-error');
+  var addButton = document.getElementById('add-task-button');
   itemText.style.borderColor = '#1F1F3D';
+  itemText.style.borderWidth = '2px'
+  addButton.style.height = '56px'
   taskError.style.display = 'none';
 }

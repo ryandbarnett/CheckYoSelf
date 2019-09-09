@@ -131,6 +131,21 @@ main {
   margin-left: 5%;
 }
 
+#add-item-area {
+  display: block;
+  height: 56px;
+  margin-bottom: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 94%;
+}
+
+#item-input {
+  display: inline;
+  margin-right: -15px;
+  width: 86%;
+}
+
 .task-input {
   border: 2px solid #1F1F3D;
   border-radius: 4px;
@@ -142,15 +157,16 @@ main {
 }
 
 #add-task-button {
+  display: inline;
   font-size: 4em;
   font-weight: 100;
   height: 56px;
   line-height: 50px;
-  margin-bottom: 50px;
-  margin-right: 3.4%;
-  margin-top: -56px;
+  margin-bottom: 0px;
+  margin-left: auto;
+  margin-right: -15px;
   text-align: center;
-  vertical-align: middle;
+  vertical-align: top;
   width: 56px;
 }
 
