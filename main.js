@@ -146,14 +146,19 @@ function removeTitleError() {
 function noTaskError() {
   var itemText = document.getElementById('item-input');
   var taskError = document.getElementById('item-error');
+  var addButton = document.getElementById('add-task-button');
   itemText.style.borderColor = '#FFC30C';
-  itemText.style.borderWidth = '4px';
+  itemText.style.borderWidth = '4px 0px 4px 4px';
+  addButton.style.height = '60px'
   taskError.style.display = 'inline';
 }
 
 function removeTaskError() {
   var itemText = document.getElementById('item-input');
   var taskError = document.getElementById('item-error');
+  var addButton = document.getElementById('add-task-button');
   itemText.style.borderColor = '#1F1F3D';
+  itemText.style.borderWidth = '2px'
+  addButton.style.height = '56px'
   taskError.style.display = 'none';
 }
