@@ -32,7 +32,7 @@ function newItem() {
   if (itemText.value === '') {
       addTask.disabled = true;
   } else {
-      newTask();
+      newTaskObj();
       tempItems.insertAdjacentHTML('beforeend',
         '<li class= temp-task>' +
           '<button class="delete" id="delete-button" type="button" name="button"></button>' +
@@ -110,8 +110,7 @@ function clearEnabled() {
   clearButton.disabled = false;
 }
 
-// change function name to newTask to newTaskObj to better reflect what is happening?
-function newTask() {
+function newTaskObj() {
   var itemText = document.getElementById('item-input');
   var taskObj = new taskItem(itemText.value);
   toDoTaskArr.push(taskObj);
