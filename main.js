@@ -85,8 +85,15 @@ function newCardObj() {
 function noTitleError() {
   var itemTitle = document.querySelector('#task-input');
   var titleError = document.getElementById('title-error');
-  itemTitle.style.borderColor = '#740000';
+  itemTitle.style.borderColor = '#1F1F3D';
   titleError.style.display = 'block';
+}
+
+function removeTitleError() {
+  var itemTitle = document.querySelector('#task-input');
+  var titleError = document.getElementById('title-error');
+  itemTitle.style.borderColor = '#740000';
+  titleError.style.display = 'none';
 }
 
 function noTaskError() {

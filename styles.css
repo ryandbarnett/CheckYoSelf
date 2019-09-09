@@ -196,6 +196,22 @@ button:focus {
   width: 100%;
 }
 
+#temp-task-card {
+  background-color: #1F1F3D;
+}
+
+#temp-task-title {
+  color: #FFC30C;
+}
+
+#temp-message {
+  color: #FFC30C;
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .task-display {
   background-color: #F3F6F7;
   column-count: 2;
@@ -216,7 +232,7 @@ ul {
 }
 
 .task-buttonli-div {
-  margin: 10px 0 10px 15px;
+  margin: 10px 10px 10px 15px;
 }
 
 .checkbox-button {
