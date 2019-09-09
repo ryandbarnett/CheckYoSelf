@@ -22,6 +22,7 @@ inputForm.addEventListener('keyup', function(event) {
   if (event.target.id === 'item-input') {
     plusEnabled();
     clearEnabled();
+    removeTaskError();
   }
 });
 
@@ -31,6 +32,7 @@ function newItem() {
   var addTask = document.querySelector('#add-task-button');
   if (itemText.value === '') {
       addTask.disabled = true;
+      noTaskError();
   } else {
       newTaskObj();
       tempItems.insertAdjacentHTML('beforeend',
@@ -125,4 +127,33 @@ function newCardObj() {
   addTaskToCard(cardObject.tasks);
   clearAll();
   toDoTaskArr = [];
+}
+
+function noTitleError() {
+  var itemTitle = document.querySelector('#task-input');
+  var titleError = document.getElementById('title-error');
+  itemTitle.style.borderColor = '#FFC30C';
+  titleError.style.display = 'block';
+}
+
+function removeTitleError() {
+  var itemTitle = document.querySelector('#task-input');
+  var titleError = document.getElementById('title-error');
+  itemTitle.style.borderColor = '#1F1F3D';
+  titleError.style.display = 'none';
+}
+
+function noTaskError() {
+  var itemText = document.getElementById('item-input');
+  var taskError = document.getElementById('item-error');
+  itemText.style.borderColor = '#FFC30C';
+  itemText.style.borderWidth = '4px';
+  taskError.style.display = 'inline';
+}
+
+function removeTaskError() {
+  var itemText = document.getElementById('item-input');
+  var taskError = document.getElementById('item-error');
+  itemText.style.borderColor = '#1F1F3D';
+  taskError.style.display = 'none';
 }
