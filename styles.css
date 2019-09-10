@@ -212,6 +212,10 @@ button:focus {
   width: 100%;
 }
 
+.urgent-true {
+  background-color: magenta;
+}
+
 #temp-task-card {
   background-color: #1F1F3D;
 }
@@ -281,6 +285,7 @@ hr {
   display: flex;
   justify-content: space-between;
   padding: 10px;
+  background: none;
 }
 
 .urgent-button {

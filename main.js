@@ -2,6 +2,22 @@ var inputForm = document.querySelector('.user-input-form');
 var toDoTaskArr = [];
 var toDoCardArr = [];
 
+function toggleUrgent(event){
+  var id = event.target.parentNode.parentNode.id;
+
+  var findID= toDoCardArr.find(function(el){
+    return el.id == id;
+  });
+
+  findID.urgent=!findID.urgent;
+  console.log('afterID',findID);
+  console.log(toDoCardArr);
+  event.target.parentNode.parentNode.setAttribute('class', `task-card urgent-${findID.urgent}`);
+}
+// add a class if it's true
+
+// remove a class if it's false
+
 inputForm.addEventListener('click', function(event) {
     if (event.target.id === 'add-task-button') {
       newItem();
@@ -13,6 +29,7 @@ inputForm.addEventListener('click', function(event) {
   } if (event.target.id === 'delete-button') {
       deleteTask();
   }
+
 });
 
 inputForm.addEventListener('keyup', function(event) {
@@ -54,7 +71,7 @@ function addNewCard(cardObject) {
     noTitleError();
   } else {
     taskDisplay.insertAdjacentHTML('afterbegin',
-    `<section class="task-card">
+    `<section class="task-card" id=${cardObject.id}>
       <div class="task-title-div">
         <h3 class="task-title-h3">${cardObject.title}</h3>
       </div>
@@ -63,7 +80,7 @@ function addNewCard(cardObject) {
       <hr>
       </ul>
       <div class="card-controls">
-        <button class="urgent-button" type="button" name="button">URGENT</button>
+        <button class="urgent-button" onclick='toggleUrgent(event)' type="urgent-button" name="button">URGENT</button>
         <button class="delete-button" type="button" name="button">DELETE</button>
       </div>
     </section>`);
@@ -130,7 +147,6 @@ function newCardObj() {
   var title = document.getElementById('task-input');
   var cardObject = new toDoCard(title.value, toDoTaskArr);
   toDoCardArr.push(cardObject);
-  console.log(cardObject);
   addNewCard(cardObject);
   addTaskToCard(cardObject.tasks);
   clearAll();
@@ -173,5 +189,5 @@ function removeTaskError() {
 
 function removeTempCard() {
   var tempTaskCard = document.querySelector('#temp-task-card');
-  tempTaskCard.style.display = 'none';
+  tempTaskCard.remove();
 }
